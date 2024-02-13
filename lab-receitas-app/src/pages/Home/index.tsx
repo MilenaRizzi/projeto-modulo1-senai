@@ -1,16 +1,21 @@
+import { CheckIcon } from "@radix-ui/react-icons";
+
 import {
   HomeContainer,
   FilterContainer,
   Footer,
   NewRecipeButton,
   BotaoFiltrar,
+  Label,
   CheckboxContainer,
+  CheckboxRoot,
+  CheckboxLabel,
+  CheckboxIndicator,
 } from "./styles";
 import { ListRecipes } from "./components/ListRecipes";
 import { Header } from "../../components/Header";
 import * as Dialog from "@radix-ui/react-dialog";
 import { NewTransationModal } from "../../components/NewTransactionModal";
-import { Checkbox } from "../../components/Checkbox";
 
 // display: flex;
 // flex-direction: row;
@@ -30,15 +35,36 @@ export function Home() {
           <form>
             <CheckboxContainer>
               <div>
-              <Checkbox idInput="semLeite" htmlFor="semLeite" textLabel="Sem divados de leite"
-              />
+                <CheckboxLabel>
+                  <CheckboxRoot defaultChecked id="semLeite">
+                    <CheckboxIndicator>
+                      <CheckIcon />
+                    </CheckboxIndicator>
+                  </CheckboxRoot>
+                  <Label htmlFor="semLeite">
+                    Sem derivados <br />
+                    de leite.
+                  </Label>
+                </CheckboxLabel>
 
-              <Checkbox idInput="semGluten" htmlFor="semGluten" textLabel="Sem gluten"
-             />
+                <CheckboxLabel>
+                  <CheckboxRoot defaultChecked id="semGluten">
+                    <CheckboxIndicator>
+                      <CheckIcon fontSize={25} />
+                    </CheckboxIndicator>
+                  </CheckboxRoot>
+                  <Label htmlFor="semGluten">Sem gluten.</Label>
+                </CheckboxLabel>
               </div>
 
-              <Checkbox idInput="todos" htmlFor="todos" textLabel="Todos"
-              />
+              <CheckboxLabel>
+                <CheckboxRoot defaultChecked id="todos">
+                  <CheckboxIndicator>
+                    <CheckIcon fontSize={25} />
+                  </CheckboxIndicator>
+                </CheckboxRoot>
+                <Label htmlFor="todos">Todos.</Label>
+              </CheckboxLabel>
             </CheckboxContainer>
             <BotaoFiltrar>Filtrar</BotaoFiltrar>
           </form>

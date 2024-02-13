@@ -1,6 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import styled from "styled-components";
 import imagemFundo from "../../assets/img-fundo.jpg";
+// import * as Checkbox from "@radix-ui/react-checkbox";
+
 
 //Quando eu quero estilizar um elemento do Dialog eu tenho que trazer a imprtação dele para ca e também chama-lo dentro dos parênteses
 
@@ -13,6 +15,16 @@ export const Overlay = styled(Dialog.Overlay)`
   background-size: cover;
 `;
 
+export const Wrapper = styled.div`
+  /* Novo wrapper estilo */
+  background: yellow;
+  border-radius: 8px;
+  margin: 28px 0 22px 0;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const HeaderWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -20,17 +32,6 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   padding-top: 1.5rem;
   z-index: 100; /* Garante que o header esteja acima de outros elementos */
-`;
-
-export const Wrapper = styled.div`
-  /* Novo wrapper estilo */
-  background: #ffec5c;
-
-  border-radius: 8px;
-  margin: 28px 0 22px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
 export const Content = styled(Dialog.Content)`
@@ -45,6 +46,7 @@ export const Content = styled(Dialog.Content)`
 
   background-color: black; /* Definindo o fundo como amarelo */
   border-radius: 20px; /* Arredondando a borda */
+
 `;
 
 export const RecipeFormContainer = styled.div`
@@ -58,20 +60,14 @@ export const RecipeFormContainer = styled.div`
 
   form {
     width: 380px;
-  }
-
-  img {
-    margin-bottom: 90px;
+    
   }
 `;
 
-
 export const Title = styled(Dialog.Title)`
   margin: 1rem 0 0.75rem 0;
-  padding-bottom: 0.5rem;
   text-align: center;
   font-weight: bold;
-  font-size: 1.2rem;
 `;
 
 export const Infos = styled.div`
@@ -79,7 +75,7 @@ export const Infos = styled.div`
   align-items: center;
   margin-bottom: 0.35rem;
 
-  #nameRecipe {
+  #name {
     height: 30px;
   }
 
@@ -93,43 +89,35 @@ export const Infos = styled.div`
     height: 57px;
     width: 241px;
     resize: none; /* Impede que o usuário redimensione manualmente */
-    padding: 0.35rem 0.5rem;
+    padding: 0.28rem 0.5rem;
     border: 0;
     border-radius: 0.32rem;
     font-size: 0.85rem; /* Define o tamanho da fonte */
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    box-shadow: 2px 2px 0 0 rgba(128, 128, 128, 0.5); /* Exemplo de sombra cinza com 50% de opacidade */
   }
+
 `;
 
 export const CloseButton = styled(Dialog.DialogClose)`
   position: absolute;
   background: transparent;
   border: 0;
-  top: 2.5rem;
+  top: 1.5rem;
   right: 1.5rem;
   line-height: 0;
   cursor: pointer;
 `;
 
-export const ButtonDiv = styled.div`
-  display: flex;
-  padding: 0.5rem;
-`;
-
 export const ButtonNewRecipe = styled.button`
-  width: 34%;
+  width: 22%;
   padding: 0.3rem;
   background-color: white;
   border-radius: 5px;
   font-size: 0.9rem;
   font-weight: bold;
-  margin-left: 12rem;
-  color: #000;
-  cursor: pointer;
+  margin-top: 0.65rem;
+  margin-bottom: 1rem;
 
-  &:hover{
-    background-color: greenyellow;
-  }
 `;
+
