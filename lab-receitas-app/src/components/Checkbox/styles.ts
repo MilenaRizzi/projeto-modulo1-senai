@@ -1,56 +1,40 @@
 import styled from "styled-components";
-
+import * as Checkbox from "@radix-ui/react-checkbox";
 
 export const CheckboxContainer = styled.div`
-   height: 35px;
-   margin: 0px 4px;
-   border-radius: 5px;
-   
-   background-color: ${props => props.checked ? '#black' : '#transparent'};
-   
-   display: flex;
-   align-items: center;
-`;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
 
-export const CheckboxGroup = styled.div`
+  div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    
-    div {
-    display: flex;
-    gap: 8px;
-    margin-top: 2px;
-      
   }
 `
+export const CheckboxLabel = styled.div`
+  display: flex;
+  align-items: center;
+`
 
-export const HiddenCheckbox = styled.input.attrs({type: 'checkbox'})`
-   overflow: hidden;
-   white-space: nowrap;
-   width: 1px;
-   height: 1px;
-   margin: -1px;
-   padding: 0;
-`;
-export const Texto = styled.label`
-    font-size: 20px;
-  
-`;
+export const CheckboxRoot = styled(Checkbox.Root)`
+  background-color: transparent;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
 
-export const StyledCheckbox = styled.label`
-   width: 26px;
-   height: 26px;
-   margin-right: 6px;
-   border-radius: 5px;
-   background: transparent;
-   border: 2px solid black;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   img {
-      display: ${props => props.checked ? 'flex' : 'none'};
-      filter: invert(75%) sepia(11%) saturate(6042%) hue- rotate(30deg) brightness(105%) contrast(68%);
-   }
-`;
+`
+
+export const CheckboxIndicator = styled(Checkbox.Indicator)`
+  display: flex;
+  align-items: center;
+`
+
+export const Label = styled.label`
+  padding-left: 12px;
+  font-size: 1.2rem;
+  width: 145px;
+`
