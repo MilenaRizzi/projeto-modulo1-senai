@@ -7,6 +7,7 @@ export const HomeContainer = styled.main`
   padding: 1rem;
   justify-content: space-around;
   gap: 12rem;
+  min-width: 100%;
   flex-wrap: wrap;
 `;
 

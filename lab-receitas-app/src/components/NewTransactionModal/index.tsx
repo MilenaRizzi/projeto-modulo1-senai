@@ -18,8 +18,9 @@ import {
   Wrapper,
   ButtonDiv,
 } from "./styles";
-import { useState } from "react";
+import { useContext } from "react";
 import { X } from "phosphor-react";
+import { RecipeContext } from "../../contexts/RecipeContext";
 // import { useState } from "react";
 
 const newRecipeFormValidationSchema = zod.object({
@@ -52,19 +53,24 @@ interface Recipe {
 }
 
 export function NewTransationModal() {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
 
-  const { register, handleSubmit, reset, control } = useForm<NewRecipeFormData>(
-    {
-      resolver: zodResolver(newRecipeFormValidationSchema),
-      defaultValues: {
-        nameRecipe: "",
-        ingredients: "",
-        preparationInstructions: "",
-        options: { lactose: false, gluten: false },
-      },
-    }
-  );
+  const { recipes, setRecipes} = useContext(RecipeContext)
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    control,
+    formState: { isSubmitting },
+  } = useForm<NewRecipeFormData>({
+    resolver: zodResolver(newRecipeFormValidationSchema),
+    defaultValues: {
+      nameRecipe: "",
+      ingredients: "",
+      preparationInstructions: "",
+      options: { lactose: false, gluten: false },
+    },
+  });
 
   function handleCreateNewRecipe(data: NewRecipeFormData) {
     console.log(data);
@@ -91,7 +97,10 @@ export function NewTransationModal() {
       </HeaderWrapper>
       <Content>
         <Wrapper>
-          <CloseButton> <X size={24} />{" "}</CloseButton>
+          <CloseButton>
+            {" "}
+            <X size={24} />{" "}
+          </CloseButton>
 
           <Title>Adicionar receita</Title>
           <RecipeFormContainer>
@@ -138,6 +147,7 @@ export function NewTransationModal() {
                             checked={field.value}
                             sx={{ "& .MuiSvgIcon-root": { fontSize: 32 } }}
                             color="default"
+                            indeterminate={false} // Adicionado de acordo com a especificação
                           />
                         }
                         label="Lactose"
@@ -155,8 +165,10 @@ export function NewTransationModal() {
                             onChange={(e) => {
                               field.onChange(e.target.checked);
                             }}
+                            checked={field.value}
                             sx={{ "& .MuiSvgIcon-root": { fontSize: 32 } }}
                             color="default"
+                            indeterminate={false} // Adicionado de acordo com a especificação
                           />
                         }
                         label="Gluten"
@@ -166,7 +178,9 @@ export function NewTransationModal() {
                 </FormGroup>
               </Infos>
               <ButtonDiv>
-                <ButtonNewRecipe type="submit">Inserir</ButtonNewRecipe>
+                <ButtonNewRecipe type="submit" disabled={isSubmitting}>
+                  Inserir
+                </ButtonNewRecipe>
               </ButtonDiv>
             </form>
             <img src="src\assets\panela-quente-128.png" alt="" />

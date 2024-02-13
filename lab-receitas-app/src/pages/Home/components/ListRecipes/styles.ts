@@ -1,6 +1,30 @@
 import styled from "styled-components";
 
-export const ReceitaContainer = styled.div`
+export const ListContainer = styled.div`
+  min-width: 75vh;
+  min-height: 70vh;
+  border-radius: 2rem;
+
+  background: #ffec5c;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem;
+
+  h1 {
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+  }
+`;
+
+export const RecipeContainer = styled.div`
+
+  li {
+    list-style: none; 
+
+  }
+
+`
+export const Recipe = styled.div`
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -25,21 +49,7 @@ export const ReceitaContainer = styled.div`
   }
 `;
 
-export const ListContainer = styled.div`
-  min-width: 75vh;
-  min-height: 70vh;
-  border-radius: 2rem;
 
-  background: #ffec5c;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 3rem;
-
-  h1 {
-    padding-top: 2rem;
-    margin-bottom: 1rem;
-  }
-`;
 
 export const EditeRecipeButton = styled.button`
     border: 0;

@@ -61,7 +61,7 @@ export const RecipeFormContainer = styled.div`
   }
 
   img {
-    margin-bottom: 90px;
+    margin-bottom: 75px;
   }
 `;
 
@@ -90,7 +90,7 @@ export const Infos = styled.div`
   }
 
   textarea {
-    height: 57px;
+    height: 60px;
     width: 241px;
     resize: none; /* Impede que o usuário redimensione manualmente */
     padding: 0.35rem 0.5rem;
@@ -116,20 +116,27 @@ export const CloseButton = styled(Dialog.DialogClose)`
 export const ButtonDiv = styled.div`
   display: flex;
   padding: 0.5rem;
+  
+ 
 `;
 
 export const ButtonNewRecipe = styled.button`
   width: 34%;
   padding: 0.3rem;
-  background-color: white;
   border-radius: 5px;
   font-size: 0.9rem;
   font-weight: bold;
   margin-left: 12rem;
-  color: #000;
   cursor: pointer;
 
-  &:hover{
-    background-color: greenyellow;
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
+
+  &:not(:disabled):hover {
+    background-color: green;
+  } 
+
+
 `;

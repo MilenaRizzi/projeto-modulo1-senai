@@ -20,6 +20,8 @@ import { NewTransationModal } from "../../components/NewTransactionModal";
 // display: flex;
 // flex-direction: row;
 
+
+
 export function Home() {
   // const [checked, setChecked] = React.useState(false);
 
@@ -30,47 +32,46 @@ export function Home() {
     <div>
       <Header />
       <HomeContainer>
-        <FilterContainer>
-          <h1>Filtrar:</h1>
-          <form>
-            <CheckboxContainer>
-              <div>
+          <FilterContainer>
+            <h1>Filtrar:</h1>
+            <form>
+              <CheckboxContainer>
+                <div>
+                  <CheckboxLabel>
+                    <CheckboxRoot defaultChecked id="semLeite">
+                      <CheckboxIndicator>
+                        <CheckIcon />
+                      </CheckboxIndicator>
+                    </CheckboxRoot>
+                    <Label htmlFor="semLeite">
+                      Sem derivados <br />
+                      de leite.
+                    </Label>
+                  </CheckboxLabel>
+                  <CheckboxLabel>
+                    <CheckboxRoot defaultChecked id="semGluten">
+                      <CheckboxIndicator>
+                        <CheckIcon fontSize={25} />
+                      </CheckboxIndicator>
+                    </CheckboxRoot>
+                    <Label htmlFor="semGluten">Sem gluten.</Label>
+                  </CheckboxLabel>
+                </div>
                 <CheckboxLabel>
-                  <CheckboxRoot defaultChecked id="semLeite">
-                    <CheckboxIndicator>
-                      <CheckIcon />
-                    </CheckboxIndicator>
-                  </CheckboxRoot>
-                  <Label htmlFor="semLeite">
-                    Sem derivados <br />
-                    de leite.
-                  </Label>
-                </CheckboxLabel>
-
-                <CheckboxLabel>
-                  <CheckboxRoot defaultChecked id="semGluten">
+                  <CheckboxRoot defaultChecked id="todos">
                     <CheckboxIndicator>
                       <CheckIcon fontSize={25} />
                     </CheckboxIndicator>
                   </CheckboxRoot>
-                  <Label htmlFor="semGluten">Sem gluten.</Label>
+                  <Label htmlFor="todos">Todos.</Label>
                 </CheckboxLabel>
-              </div>
-
-              <CheckboxLabel>
-                <CheckboxRoot defaultChecked id="todos">
-                  <CheckboxIndicator>
-                    <CheckIcon fontSize={25} />
-                  </CheckboxIndicator>
-                </CheckboxRoot>
-                <Label htmlFor="todos">Todos.</Label>
-              </CheckboxLabel>
-            </CheckboxContainer>
-            <BotaoFiltrar>Filtrar</BotaoFiltrar>
-          </form>
+              </CheckboxContainer>
+              <BotaoFiltrar>Filtrar</BotaoFiltrar>
+            </form>
         </FilterContainer>
+    
 
-        <ListRecipes />
+        <ListRecipes/>        
         <Dialog.Root>
           <Dialog.Trigger asChild>
             <NewRecipeButton type="button">

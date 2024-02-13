@@ -1,13 +1,16 @@
 import { Home } from "./pages/Home";
 
 import { ContentWrapper, GlobalStyle } from "./global";
+import { RecipesProvider } from "./contexts/RecipeContext";
 
 function App() {
   return (
-    <ContentWrapper>
-      <Home />
-      <GlobalStyle />
-    </ContentWrapper>
+    <RecipesProvider>
+      <ContentWrapper>
+        <Home />
+        <GlobalStyle />
+      </ContentWrapper>
+    </RecipesProvider>
   );
 }
 
