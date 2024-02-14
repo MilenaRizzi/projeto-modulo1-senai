@@ -9,6 +9,7 @@ export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem 3rem;
+  
 
   h1 {
     padding-top: 2rem;

@@ -21,7 +21,6 @@ import {
 import { useContext } from "react";
 import { X } from "phosphor-react";
 import { RecipeContext } from "../../contexts/RecipeContext";
-// import { useState } from "react";
 
 const newRecipeFormValidationSchema = zod.object({
   nameRecipe: zod.string().min(1, "Informe o nome da receita"),
@@ -32,12 +31,6 @@ const newRecipeFormValidationSchema = zod.object({
     gluten: zod.boolean(),
   }),
 });
-
-// interface NewRecipeFormData {
-//   nameRecipe: string
-//   ingredients: string
-//   preparationInstructions: string
-// }
 
 type NewRecipeFormData = zod.infer<typeof newRecipeFormValidationSchema>;
 
@@ -52,30 +45,33 @@ interface Recipe {
   };
 }
 
-export function NewTransationModal() {
+interface NewTransactionModalProps {
+  recipe?: Recipe;
+}
 
-  const { recipes, setRecipes} = useContext(RecipeContext)
+export function NewTransationModal({ recipe }: NewTransactionModalProps) {
+  const { recipes, setRecipes } = useContext(RecipeContext);
 
   const {
     register,
     handleSubmit,
-    reset,
     control,
+    reset,
     formState: { isSubmitting },
+  
   } = useForm<NewRecipeFormData>({
     resolver: zodResolver(newRecipeFormValidationSchema),
     defaultValues: {
-      nameRecipe: "",
-      ingredients: "",
-      preparationInstructions: "",
-      options: { lactose: false, gluten: false },
+      nameRecipe: recipe?.nameRecipe || "",
+      ingredients: recipe?.ingredients || "",
+      preparationInstructions: recipe?.preparationInstructions || "",
+      options: { lactose: recipe?.options.lactose || false, gluten: recipe?.options.gluten || false },
     },
   });
 
-  function handleCreateNewRecipe(data: NewRecipeFormData) {
-    console.log(data);
+  const handleCreateOrUpdateRecipe = (data: NewRecipeFormData) => {
     const newRecipe: Recipe = {
-      id: String(new Date().getTime()),
+      id: recipe ? recipe.id : String(new Date().getTime()),
       nameRecipe: data.nameRecipe,
       ingredients: data.ingredients,
       preparationInstructions: data.preparationInstructions,
@@ -85,9 +81,15 @@ export function NewTransationModal() {
       },
     };
 
-    setRecipes([...recipes, newRecipe]);
-    reset();
-  }
+    if (recipe) {
+      const updatedRecipes = recipes.map((r) => (r.id === recipe.id ? newRecipe : r));
+      setRecipes(updatedRecipes);
+    } else {
+      setRecipes([...recipes, newRecipe]);
+      reset();
+    }
+  };
+
 
   return (
     <Dialog.Portal>
@@ -98,39 +100,31 @@ export function NewTransationModal() {
       <Content>
         <Wrapper>
           <CloseButton>
-            {" "}
-            <X size={24} />{" "}
+            <X size={24} />
           </CloseButton>
-
-          <Title>Adicionar receita</Title>
+          <Title>{recipe ? "Editar receita" : "Adicionar receita"}</Title>
           <RecipeFormContainer>
-            <form onSubmit={handleSubmit(handleCreateNewRecipe)}>
+            <form onSubmit={handleSubmit(handleCreateOrUpdateRecipe)}>
               <Infos>
                 <p>Nome</p>
                 <textarea id="nameRecipe" {...register("nameRecipe")} />
               </Infos>
-
               <Infos>
                 <p>Ingredientes</p>
                 <textarea id="ingredients" {...register("ingredients")} />
               </Infos>
-
               <Infos>
                 <p>Modo de preparo</p>
-                <textarea
-                  id="preparationInstructions"
-                  {...register("preparationInstructions")}
-                />
+                <textarea id="preparationInstructions" {...register("preparationInstructions")} />
               </Infos>
-
               <Infos>
                 <p>Restrições</p>
-
                 <FormGroup
                   style={{
                     display: "flex",
                     flexDirection: "row",
-                    marginRight: "px",
+                    marginRight: "5px",
+                  
                   }}
                 >
                   <Controller
@@ -150,7 +144,8 @@ export function NewTransationModal() {
                             indeterminate={false} // Adicionado de acordo com a especificação
                           />
                         }
-                        label="Lactose"
+                        style={{ marginLeft: 0, marginRight: 20}}
+                        label={<span style={{ fontWeight: 'bold' }}>Lactose</span>}
                       />
                     )}
                   />
@@ -171,7 +166,8 @@ export function NewTransationModal() {
                             indeterminate={false} // Adicionado de acordo com a especificação
                           />
                         }
-                        label="Gluten"
+                        style={{ marginRight: 0 }}
+                        label={<span style={{ fontWeight: 'bold' }}>Glúten</span>}
                       />
                     )}
                   />
@@ -179,12 +175,13 @@ export function NewTransationModal() {
               </Infos>
               <ButtonDiv>
                 <ButtonNewRecipe type="submit" disabled={isSubmitting}>
-                  Inserir
+                  {recipe ? "Atualizar" : "Inserir"}
                 </ButtonNewRecipe>
               </ButtonDiv>
             </form>
             <img src="src\assets\panela-quente-128.png" alt="" />
           </RecipeFormContainer>
+       
         </Wrapper>
       </Content>
     </Dialog.Portal>

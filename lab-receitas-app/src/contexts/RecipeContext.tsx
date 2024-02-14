@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useState } from "react";
 
-interface Recipe {
+export interface Recipe {
   id: string;
   nameRecipe: string;
   ingredients: string;

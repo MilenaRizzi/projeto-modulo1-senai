@@ -17,8 +17,7 @@ import { Header } from "../../components/Header";
 import * as Dialog from "@radix-ui/react-dialog";
 import { NewTransationModal } from "../../components/NewTransactionModal";
 
-// display: flex;
-// flex-direction: row;
+
 
 
 
@@ -78,7 +77,7 @@ export function Home() {
               <img src="src\assets\plus.png" alt="" />
             </NewRecipeButton>
           </Dialog.Trigger>
-          <NewTransationModal />
+          <NewTransationModal/>
         </Dialog.Root>
       </HomeContainer>
       <Footer>
