@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ListContainer = styled.div`
-  min-width: 520px;
+  min-width: 540px;
   min-height: 75vh;
   border-radius: 2rem;
   box-shadow: 0 -2px 1px rgb(227, 194, 32, 0.5);

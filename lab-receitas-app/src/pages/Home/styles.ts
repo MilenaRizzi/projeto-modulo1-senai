@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.main`
   display: flex;
-  padding: 1rem;
+  padding: 1.8rem;
   justify-content: space-around;
   gap: 12rem;
   min-width: 100%;
@@ -16,6 +16,7 @@ export const NewRecipeButton = styled.button`
     border-radius: 100%;
     background: black;
     cursor: pointer;
+    margin-bottom: 25px;
 
     &:hover {
       background-color: #292A36;
@@ -28,8 +29,9 @@ export const NewRecipeButton = styled.button`
 
 export const Footer = styled.div`
   text-align: right;
-  margin-right: 10px;
-  
+  margin-right: 20px;
+  margin-top: -40px;
+
   img {
     width: 20vh;
   }
