@@ -27,14 +27,14 @@ export function FilterRecipes() {
         if (!prevSelected.includes("semLeite")) {
           return prevSelected.includes("semGluten") ? ["semLeite", "semGluten"] : ["semLeite"];
         } else {
-          return prevSelected.filter((checkbox) => checkbox !== "semLeite") as CheckboxAction[];
+          return prevSelected.filter((checkbox) => checkbox !== "semLeite");
         }
       }
       if (id === "semGluten") {
         if (!prevSelected.includes("semGluten")) {
           return prevSelected.includes("semLeite") ? ["semLeite", "semGluten"] : ["semGluten"];
         } else {
-          return prevSelected.filter((checkbox) => checkbox !== "semGluten") as CheckboxAction[];
+          return prevSelected.filter((checkbox) => checkbox !== "semGluten") ;
         }
       }
       return ["todos"];
@@ -64,21 +64,14 @@ export function FilterRecipes() {
         return true; // Retorna verdadeiro se semGluten estiver marcado e a receita não tiver glúten
       }
   
-      // Adicione mais condições de filtro conforme necessário...
-  
       return false; // Se nenhuma condição de filtro corresponder, retorna falso
     });
   
     setFilteredRecipes(filtered);
   }
   
-    // Efeito para limpar a lista de receitas filtradas sempre que 'recipes' for atualizado
     useEffect(() => {
-      const clearFilteredRecipes = () => {
-        setFilteredRecipes(recipes);
-      };
-    
-      clearFilteredRecipes();
+      handleFilterClick();
     }, [recipes]);
     
 

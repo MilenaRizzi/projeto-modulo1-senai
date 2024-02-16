@@ -15,18 +15,14 @@ import { NewTransationModal } from "./components/NewTransactionModal";
 
 
 export function Home() {
-  const  {filteredRecipes, selectedCheckboxes,} = useContext(FilterRecipeContext)
+  const  {filteredRecipes} = useContext(FilterRecipeContext)
 
   return (
     <div>
       <Header />
       <HomeContainer>
       <FilterRecipes/>
-          {filteredRecipes.length === 0 && selectedCheckboxes.includes("semGluten") ? (
-        <ListRecipes recipes={[]} /> // Renderiza uma lista vazia
-      ) : (
-        <ListRecipes recipes={filteredRecipes} /> // Renderiza a lista de receitas filtradas normalmente
-      )}
+        <ListRecipes recipes={filteredRecipes} /> 
         <Dialog.Root>
           <Dialog.Trigger asChild>
             <NewRecipeButton type="button" title="Cadastrar">
