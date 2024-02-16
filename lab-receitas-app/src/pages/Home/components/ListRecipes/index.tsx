@@ -1,13 +1,12 @@
-import { useContext } from "react";
+import { NewTransationModal } from "../NewTransactionModal";
 import {
   EditeRecipeButton,
   ListContainer,
   Recipe,
   RecipeContainer,
 } from "./styles";
-import { RecipeContext } from "../../../../contexts/RecipeContext";
 import * as Dialog from "@radix-ui/react-dialog";
-import { NewTransationModal } from "../../../../components/NewTransactionModal";
+
 
 // Seu código existente
 interface Recipe {
@@ -20,15 +19,13 @@ interface Recipe {
     gluten: boolean;
   };
 }
-export function ListRecipes() {
-  // Adiciona estado para controlar a visibilidade do modal
-  const { recipes } = useContext(RecipeContext);
+
+export function ListRecipes({ recipes }: { recipes: Recipe[] }) {
 
   return (
     <ListContainer>
-      <h1>Receitas Cadastradas</h1>
+      <h1>Receitas Cadastradas:</h1>
       <RecipeContainer>
-        <div>
           {recipes.map((recipe) => (
             <li key={recipe.id}>
               <Recipe>
@@ -38,7 +35,7 @@ export function ListRecipes() {
                 </div>
                 <Dialog.Root>
                   <Dialog.Trigger asChild>
-                    <EditeRecipeButton type="button">
+                    <EditeRecipeButton type="button" title="Informações">
                       <img src="src\assets\icone-de-informacoes.png" alt="" />
                     </EditeRecipeButton>
                   </Dialog.Trigger>
@@ -48,7 +45,6 @@ export function ListRecipes() {
               </Recipe>
             </li>
           ))}
-        </div>
       </RecipeContainer>
       {/* Renderiza o modal apenas se estiver aberto */}
     </ListContainer>
