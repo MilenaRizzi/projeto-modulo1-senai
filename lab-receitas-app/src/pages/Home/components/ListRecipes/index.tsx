@@ -7,8 +7,6 @@ import {
 } from "./styles";
 import * as Dialog from "@radix-ui/react-dialog";
 
-
-// Seu código existente
 interface Recipe {
   id: string;
   nameRecipe: string;
@@ -21,7 +19,6 @@ interface Recipe {
 }
 
 export function ListRecipes({ recipes }: { recipes: Recipe[] }) {
-
   return (
     <ListContainer>
       <h1>Receitas Cadastradas:</h1>
@@ -41,14 +38,11 @@ export function ListRecipes({ recipes }: { recipes: Recipe[] }) {
                   </Dialog.Trigger>
                   <NewTransationModal recipe={recipe}/>
                 </Dialog.Root>
-                {/* Adiciona evento de clique para abrir o modal */}
               </Recipe>
             </li>
           ))}
       </RecipeContainer>
-      {/* Renderiza o modal apenas se estiver aberto */}
     </ListContainer>
   );
 }
 
-// Seu código existente

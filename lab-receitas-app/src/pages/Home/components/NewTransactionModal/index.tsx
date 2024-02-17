@@ -39,7 +39,6 @@ const newRecipeFormValidationSchema = zod.object({
 });
 
 type NewRecipeFormData = zod.infer<typeof newRecipeFormValidationSchema>;
-
 interface Recipe {
   id: string;
   nameRecipe: string;
@@ -99,7 +98,6 @@ export function NewTransationModal({ recipe }: NewTransactionModalProps) {
       reset();
     }
 
-      // Salvando no localStorage
       const recipesFromStorage = JSON.parse(
         localStorage.getItem("recipes") || "[]"
       );
@@ -113,7 +111,6 @@ export function NewTransationModal({ recipe }: NewTransactionModalProps) {
   }
   function handleDeleteRecipe() {
     if (recipe) {
-      // Adicionando a receita excluída à lista de receitas excluídas no localStorage
       const deletedRecipe = recipes.find((r) => r.id === recipe.id);
       const deletedRecipesFromStorage = JSON.parse(
         localStorage.getItem("deletedRecipes") || "[]"
@@ -123,11 +120,9 @@ export function NewTransationModal({ recipe }: NewTransactionModalProps) {
         JSON.stringify([...deletedRecipesFromStorage, deletedRecipe])
       );
 
-      // Removendo a receita da lista de receitas no estado
       const updatedRecipes = recipes.filter((r) => r.id !== recipe.id);
       setRecipes(updatedRecipes);
 
-      // Removendo a receita do localStorage
       const recipesFromStorage = JSON.parse(
         localStorage.getItem("recipes") || "[]"
       );
@@ -146,7 +141,6 @@ export function NewTransationModal({ recipe }: NewTransactionModalProps) {
       localStorage.getItem("deletedRecipes") || "[]"
     );
   
-    // Filtrar as receitas excluídas
     const activeRecipes = recipesFromStorage.filter((recipe: { id: Recipe; }) =>
       !deletedRecipesFromStorage.find((deletedRecipe: { id: Recipe; }) => deletedRecipe.id === recipe.id)
     );
@@ -233,7 +227,7 @@ export function NewTransationModal({ recipe }: NewTransactionModalProps) {
                               checked={field.value}
                               sx={{ "& .MuiSvgIcon-root": { fontSize: 32 } }}
                               color="default"
-                              indeterminate={false} // Adicionado de acordo com a especificação
+                              indeterminate={false}
                             />
                           }
                           label={<span>Lactose</span>}
@@ -254,7 +248,7 @@ export function NewTransationModal({ recipe }: NewTransactionModalProps) {
                               checked={field.value}
                               sx={{ "& .MuiSvgIcon-root": { fontSize: 32 } }}
                               color="default"
-                              indeterminate={false} // Adicionado de acordo com a especificação
+                              indeterminate={false}
                             />
                           }
                           label={

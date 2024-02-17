@@ -11,18 +11,18 @@ export const HomeContainer = styled.main`
 `;
 
 export const NewRecipeButton = styled.button`
-  margin-top: auto; /* Push the button to the bottom */
-    padding: 1rem 1.1rem;
-    border-radius: 100%;
-    background: black;
-    cursor: pointer;
-    margin-bottom: 25px;
+  margin-top: auto;
+  padding: 1rem 1.1rem;
+  border-radius: 100%;
+  background: black;
+  cursor: pointer;
+  margin-bottom: 25px;
 
-    &:hover {
-      background-color: #292A36;
-    }
+  &:hover {
+    background-color: #292a36;
+  }
 
-    img {
+  img {
     width: 37px;
   }
 `;

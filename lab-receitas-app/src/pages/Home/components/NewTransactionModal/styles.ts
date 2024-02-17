@@ -2,8 +2,6 @@ import * as Dialog from "@radix-ui/react-dialog";
 import styled from "styled-components";
 import imagemFundo from "../../../../assets/img-fundo.jpg";
 
-//Quando eu quero estilizar um elemento do Dialog eu tenho que trazer a imprtação dele para ca e também chama-lo dentro dos parênteses
-
 export const Overlay = styled(Dialog.Overlay)`
   position: fixed;
   width: 100vw;
@@ -19,7 +17,7 @@ export const HeaderWrapper = styled.div`
   left: 0;
   width: 100%;
   padding-top: 1.5rem;
-  z-index: 100; /* Garante que o header esteja acima de outros elementos */
+  z-index: 100;
 `;
 
 export const Content = styled(Dialog.Content)`
@@ -32,14 +30,12 @@ export const Content = styled(Dialog.Content)`
   align-items: center;
   transform: translate(-50%, -50%);
 
-  background-color: black; /* Definindo o fundo como amarelo */
-  border-radius: 20px; /* Arredondando a borda */
+  background-color: black;
+  border-radius: 20px; 
 `;
 
 export const Wrapper = styled.div`
-  /* Novo wrapper estilo */
   background:#FFDB24;
-
   border-radius: 8px;
   margin: 28px 0 22px 0;
   display: flex;
@@ -109,30 +105,27 @@ export const ContentRecipe = styled.div`
   textarea {
     height: 67px;
     width: 240px;
-    resize: none; /* Impede que o usuário redimensione manualmente */
+    resize: none;
     padding: 0.35rem 0.5rem;
     border: 0;
     border-radius: 0.32rem;
-    font-size: 0.9rem; /* Define o tamanho da fonte */
+    font-size: 0.9rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    box-shadow: 2px 2px 0 0 rgba(128, 128, 128, 0.5); /* Exemplo de sombra cinza com 50% de opacidade */
+    box-shadow: 2px 2px 0 0 rgba(128, 128, 128, 0.5); 
   }
 `;
 
 export const ErroMessage = styled.div`
   display: flex;
-  
+
   span {
     font-size: 12px;
     font-weight: bold;
     color: #D92525;
     width: 160px;
     margin: 2px 0 8px 65px;
-
-    
   }
-
 `;
 
 export const Restrictions = styled.div`
@@ -142,7 +135,6 @@ export const Restrictions = styled.div`
     gap: 5px;
     align-items: center;
     justify-content: space-between;
-  
 
     p {
     margin: auto;
@@ -154,7 +146,6 @@ export const Restrictions = styled.div`
     font-size: 16px;
     font-weight: bold;
   }
-
 `;
 
 export const ButtonDiv = styled.div`
@@ -163,9 +154,7 @@ export const ButtonDiv = styled.div`
   margin-left: 130px;
   justify-content: center;
   gap: 10px;
- 
 `;
-
 
 export const BaseButton = styled.button`
   padding: 0.3rem;
@@ -181,7 +170,6 @@ export const ButtonNewRecipe = styled(BaseButton)`
   &:hover {
     background-color:#DEDEDE;
     transition:  0.2s;
-
   }
 `
 export const ButtonDelete = styled(BaseButton)`

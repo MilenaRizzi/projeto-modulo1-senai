@@ -10,7 +10,6 @@ export const ListContainer = styled.div`
   flex-direction: column;
   padding: 1rem 3rem;
   
-
   h1 {
     padding-top: 2rem;
     margin-bottom: 1rem;
@@ -23,7 +22,6 @@ export const RecipeContainer = styled.div`
 
   li {
     list-style: none; 
-
   }
 
 `

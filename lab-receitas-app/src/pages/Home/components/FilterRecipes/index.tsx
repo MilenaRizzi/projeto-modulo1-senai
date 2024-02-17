@@ -15,11 +15,8 @@ import { RecipeContext } from "../../../../contexts/RecipeContext";
 type CheckboxAction = "semLeite" | "semGluten" | "todos";
 
 export function FilterRecipes() {
-
   const { recipes } = useContext(RecipeContext);
-
   const  { setFilteredRecipes, selectedCheckboxes, setSelectedCheckboxes} = useContext(FilterRecipeContext)
-
 
   function handleCheckboxClick(id: CheckboxAction) {
     setSelectedCheckboxes((prevSelected) => {
@@ -48,23 +45,21 @@ export function FilterRecipes() {
   
     const filtered = recipes.filter((recipe) => {
       if (todosChecked) {
-        return true; // Retorna verdadeiro se todos os filtros estiverem marcados
+        return true; 
       }
   
-      // Verifica se ambas as opções estão marcadas
       if (semLeiteChecked && semGlutenChecked) {
         return !recipe.options.lactose && !recipe.options.gluten;
       }
   
-      // Verifica individualmente os filtros e suas condições
       if (semLeiteChecked && !recipe.options.lactose) {
-        return true; // Retorna verdadeiro se semLeite estiver marcado e a receita não tiver lactose
+        return true;
       }
       if (semGlutenChecked && !recipe.options.gluten) {
-        return true; // Retorna verdadeiro se semGluten estiver marcado e a receita não tiver glúten
+        return true;
       }
   
-      return false; // Se nenhuma condição de filtro corresponder, retorna falso
+      return false; 
     });
   
     setFilteredRecipes(filtered);
@@ -74,8 +69,6 @@ export function FilterRecipes() {
       handleFilterClick();
     }, [recipes]);
     
-
-
   return (
     <FilterContainer>
     <h1>Filtrar:</h1>

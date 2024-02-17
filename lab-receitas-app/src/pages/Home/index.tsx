@@ -12,8 +12,6 @@ import { FilterRecipeContext } from "../../contexts/FilterRecipeContext";
 import { useContext } from "react";
 import { NewTransationModal } from "./components/NewTransactionModal";
 
-
-
 export function Home() {
   const  {filteredRecipes} = useContext(FilterRecipeContext)
 
