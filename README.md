@@ -22,6 +22,10 @@ A aplicação consiste em permiter ao usuário adicionar suas receitas em uma ap
 - ReactJS
 - Styled Components
 
+**Validação:**
+- Zod
+- Resolver
+  
 # Como executar o projeto
 Pré-requisitos: npm / yarn
 
