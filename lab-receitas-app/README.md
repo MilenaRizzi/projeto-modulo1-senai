@@ -1,30 +1,45 @@
-# React + TypeScript + Vite
+# Livro de Receitas Online
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/MilenaRizzi/projeto-modulo1-senai/blob/main/LICENSE) 
 
-Currently, two official plugins are available:
+# Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Livro de Receitas Online é uma aplicação front-end desenvolvida para resolver o desafio final do módulo 1 do curso **Desenvolvimento Web**, curso este realizado pelo grupo **Senai - Lab365**
 
-## Expanding the ESLint configuration
+A aplicação consiste em permiter ao usuário adicionar suas receitas em uma aplicação online. As receitas cadastradas são listadas em tela e, além disso, o usário tem a possibilidade de editar ou excluir uma receitada desejada. A aplicação também fornece a possibilidade do usuário filtrar as receitas com base nas restrições que ela apresentar.  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Layout web
+![web 1](https://github.com/MilenaRizzi/projeto-modulo1-senai/assets/116590085/3a31debe-365a-4cfd-aef6-5414d8b42512)
 
-- Configure the top-level `parserOptions` property like this:
+![web 2](https://github.com/MilenaRizzi/projeto-modulo1-senai/assets/116590085/eb82c62b-2b44-448b-a0be-f938715acf7d)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+![web 3](https://github.com/MilenaRizzi/projeto-modulo1-senai/assets/116590085/963e889d-56d8-4192-92ea-827c2f1f4b5a)
+
+
+# Tecnologias Utilizadas
+## Front end
+- HTML / CSS / JS / TypeScript
+- ReactJS
+- Styled Components
+- Radix UI
+- Chakra UI
+
+# Como executar o projeto
+Pré-requisitos: npm / yarn
+
+```bash
+# clonar repositório
+git clone: https://github.com/MilenaRizzi/projeto-modulo1-senai
+
+#entrar na pasta lab-receitas
+cd lab-receitas
+
+#instalar dependências
+npm instal
+npm install react-hook-form
+npm install @hookform/resolvers
+npm i zod
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Autora
+Milena Clara Ribeiro Rizzi
