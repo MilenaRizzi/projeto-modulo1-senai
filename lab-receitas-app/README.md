@@ -39,6 +39,9 @@ npm instal
 npm install react-hook-form
 npm install @hookform/resolvers
 npm i zod
+
+# executar o projeto
+npm run dev
 ```
 
 # Autora
