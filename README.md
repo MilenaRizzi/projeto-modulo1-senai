@@ -21,8 +21,6 @@ A aplicação consiste em permiter ao usuário adicionar suas receitas em uma ap
 - HTML / CSS / JS / TypeScript
 - ReactJS
 - Styled Components
-- Radix UI
-- Chakra UI
 
 # Como executar o projeto
 Pré-requisitos: npm / yarn
