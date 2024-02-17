@@ -22,12 +22,12 @@ export const CheckboxContainer = styled.div`
   div {
     display: flex;
   }
-`
+`;
+
 export const CheckboxLabel = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-
 `;
 
 export const CheckboxRoot = styled(Checkbox.Root)`
@@ -54,20 +54,19 @@ export const Label = styled.label`
 `;
 
 export const FilterButton = styled.div`
-    width: 200px;
-    margin: 3rem auto;
-    border: 3px solid black;
-    border-radius: 8px;
-    background: #FFDB24;
-    font-weight: bold;
-    padding: 0.25rem 0;
-    font-size: 1.5rem;
-    text-align: center;
-    cursor: pointer;
+  width: 200px;
+  margin: 3rem auto;
+  border: 3px solid black;
+  border-radius: 8px;
+  background: #ffdb24;
+  font-weight: bold;
+  padding: 0.25rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
 
-    &:hover {
-      background-color: #FCB500;
-      transition:  0.2s;
-
-    }
+  &:hover {
+    background-color: #fcb500;
+    transition: 0.2s;
+  }
 `;

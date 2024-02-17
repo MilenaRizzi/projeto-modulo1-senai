@@ -31,11 +31,11 @@ export const Content = styled(Dialog.Content)`
   transform: translate(-50%, -50%);
 
   background-color: black;
-  border-radius: 20px; 
+  border-radius: 20px;
 `;
 
 export const Wrapper = styled.div`
-  background:#FFDB24;
+  background: #ffdb24;
   border-radius: 8px;
   margin: 28px 0 22px 0;
   display: flex;
@@ -89,9 +89,9 @@ export const Infos = styled.div`
 `;
 
 export const ContentRecipe = styled.div`
-    display: flex;
-    width: 100%;
-  
+  display: flex;
+  width: 100%;
+
   #nameRecipe {
     height: 30px;
   }
@@ -112,7 +112,7 @@ export const ContentRecipe = styled.div`
     font-size: 0.9rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    box-shadow: 2px 2px 0 0 rgba(128, 128, 128, 0.5); 
+    box-shadow: 2px 2px 0 0 rgba(128, 128, 128, 0.5);
   }
 `;
 
@@ -122,21 +122,21 @@ export const ErroMessage = styled.div`
   span {
     font-size: 12px;
     font-weight: bold;
-    color: #D92525;
+    color: #d92525;
     width: 160px;
     margin: 2px 0 8px 65px;
   }
 `;
 
 export const Restrictions = styled.div`
-    display: flex;
-    flex-direction: space-between;
-    width: 100%;
-    gap: 5px;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: space-between;
+  width: 100%;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
 
-    p {
+  p {
     margin: auto;
     padding-right: 0.3rem;
     font-weight: bold;
@@ -168,13 +168,14 @@ export const BaseButton = styled.button`
 
 export const ButtonNewRecipe = styled(BaseButton)`
   &:hover {
-    background-color:#DEDEDE;
-    transition:  0.2s;
+    background-color: #dedede;
+    transition: 0.2s;
   }
-`
+`;
+
 export const ButtonDelete = styled(BaseButton)`
   &:hover {
-    background-color:#F75F00;
-    transition:  0.2s;
+    background-color: #f75f00;
+    transition: 0.2s;
   }
-`
+`;

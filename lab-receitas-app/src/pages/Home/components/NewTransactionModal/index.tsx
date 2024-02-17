@@ -1,11 +1,9 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { FormControlLabel, FormGroup } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
-
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
-
 import {
   Content,
   Infos,
@@ -26,7 +24,6 @@ import { useContext, useEffect } from "react";
 import { X } from "phosphor-react";
 import { RecipeContext } from "../../../../contexts/RecipeContext";
 import { Header } from "../../../../components/Header";
-
 
 const newRecipeFormValidationSchema = zod.object({
   nameRecipe: zod.string().min(1, "Informe o nome da receita"),
@@ -98,16 +95,16 @@ export function NewTransationModal({ recipe }: NewTransactionModalProps) {
       reset();
     }
 
-      const recipesFromStorage = JSON.parse(
-        localStorage.getItem("recipes") || "[]"
-      );
-      const updatedRecipesStorage = recipe
-        ? recipesFromStorage.map((r: Recipe) =>
-            r.id === recipe.id ? newRecipe : r
-          )
-        : [...recipesFromStorage, newRecipe];
-  
-      localStorage.setItem("recipes", JSON.stringify(updatedRecipesStorage));
+    const recipesFromStorage = JSON.parse(
+      localStorage.getItem("recipes") || "[]"
+    );
+    const updatedRecipesStorage = recipe
+      ? recipesFromStorage.map((r: Recipe) =>
+          r.id === recipe.id ? newRecipe : r
+        )
+      : [...recipesFromStorage, newRecipe];
+
+    localStorage.setItem("recipes", JSON.stringify(updatedRecipesStorage));
   }
   function handleDeleteRecipe() {
     if (recipe) {
@@ -140,14 +137,17 @@ export function NewTransationModal({ recipe }: NewTransactionModalProps) {
     const deletedRecipesFromStorage = JSON.parse(
       localStorage.getItem("deletedRecipes") || "[]"
     );
-  
-    const activeRecipes = recipesFromStorage.filter((recipe: { id: Recipe; }) =>
-      !deletedRecipesFromStorage.find((deletedRecipe: { id: Recipe; }) => deletedRecipe.id === recipe.id)
+
+    const activeRecipes = recipesFromStorage.filter(
+      (recipe: { id: Recipe }) =>
+        !deletedRecipesFromStorage.find(
+          (deletedRecipe: { id: Recipe }) => deletedRecipe.id === recipe.id
+        )
     );
-  
+
     setRecipes(activeRecipes);
   }, []);
-  
+
   function handleClose() {
     reset();
   }

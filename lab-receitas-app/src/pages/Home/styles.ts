@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { FormControlLabel } from '@mui/material';
 
 export const HomeContainer = styled.main`
   display: flex;

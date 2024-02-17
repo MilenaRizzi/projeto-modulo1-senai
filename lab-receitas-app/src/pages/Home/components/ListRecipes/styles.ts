@@ -5,11 +5,11 @@ export const ListContainer = styled.div`
   min-height: 75vh;
   border-radius: 2rem;
   box-shadow: 0 -2px 1px rgb(227, 194, 32, 0.5);
-  background: #FFDB24;
+  background: #ffdb24;
   display: flex;
   flex-direction: column;
   padding: 1rem 3rem;
-  
+
   h1 {
     padding-top: 2rem;
     margin-bottom: 1rem;
@@ -21,10 +21,10 @@ export const RecipeContainer = styled.div`
   max-height: 58vh;
 
   li {
-    list-style: none; 
+    list-style: none;
   }
+`;
 
-`
 export const Recipe = styled.div`
   display: flex;
   align-items: baseline;
@@ -50,11 +50,11 @@ export const Recipe = styled.div`
 `;
 
 export const EditeRecipeButton = styled.button`
-    border: 1px solid transparent;
-    background-color: transparent;
-    cursor: pointer;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
 
-    &:hover {
-      border-bottom: 1px solid black;
-    }
+  &:hover {
+    border-bottom: 1px solid black;
+  }
 `;

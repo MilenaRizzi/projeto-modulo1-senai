@@ -1,26 +1,21 @@
-import {
-  HomeContainer,
-  Footer,
-  NewRecipeButton,
-} from "./styles";
+import { HomeContainer, Footer, NewRecipeButton } from "./styles";
 import { ListRecipes } from "./components/ListRecipes";
 import { Header } from "../../components/Header";
 import * as Dialog from "@radix-ui/react-dialog";
-
 import { FilterRecipes } from "./components/FilterRecipes";
 import { FilterRecipeContext } from "../../contexts/FilterRecipeContext";
 import { useContext } from "react";
 import { NewTransationModal } from "./components/NewTransactionModal";
 
 export function Home() {
-  const  {filteredRecipes} = useContext(FilterRecipeContext)
+  const { filteredRecipes } = useContext(FilterRecipeContext);
 
   return (
     <div>
       <Header />
       <HomeContainer>
-      <FilterRecipes/>
-        <ListRecipes recipes={filteredRecipes} /> 
+        <FilterRecipes />
+        <ListRecipes recipes={filteredRecipes} />
         <Dialog.Root>
           <Dialog.Trigger asChild>
             <NewRecipeButton type="button" title="Cadastrar">
