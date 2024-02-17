@@ -34,7 +34,7 @@ Pré-requisitos: npm / yarn
 git clone: https://github.com/MilenaRizzi/projeto-modulo1-senai
 
 # entrar na pasta lab-receitas
-cd lab-receitas
+cd lab-receitas-app
 
 # instalar dependências
 npm instal
