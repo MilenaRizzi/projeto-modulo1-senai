@@ -6,7 +6,7 @@
 
 Livro de Receitas Online é uma aplicação front-end desenvolvida para resolver o desafio final do módulo 1 do curso **Desenvolvimento Web**, curso este realizado pelo grupo **Senai - Lab365**
 
-A aplicação consiste em permiter ao usuário adicionar suas receitas em uma aplicação online. As receitas cadastradas são listadas em tela e, além disso, o usário tem a possibilidade de editar ou excluir uma receitada desejada. A aplicação também fornece a possibilidade do usuário filtrar as receitas com base nas restrições que ela apresentar.  
+A aplicação consiste em permitir ao usuário adicionar suas receitas em uma aplicação online. As receitas cadastradas são listadas em tela e, além disso, o usário tem a possibilidade de editar ou excluir uma receita desejada. A aplicação também fornece a possibilidade de o usuário filtrar as receitas com base nas restrições que ela apresentar.  
 
 ## Layout web
 ![web 1](https://github.com/MilenaRizzi/projeto-modulo1-senai/assets/116590085/3a31debe-365a-4cfd-aef6-5414d8b42512)
@@ -33,7 +33,7 @@ Pré-requisitos: npm / yarn
 # clonar repositório
 git clone: https://github.com/MilenaRizzi/projeto-modulo1-senai
 
-# entrar na pasta lab-receitas
+# entrar na pasta lab-receitas-app
 cd lab-receitas-app
 
 # instalar dependências
