@@ -31,10 +31,10 @@ Pré-requisitos: npm / yarn
 # clonar repositório
 git clone: https://github.com/MilenaRizzi/projeto-modulo1-senai
 
-#entrar na pasta lab-receitas
+# entrar na pasta lab-receitas
 cd lab-receitas
 
-#instalar dependências
+# instalar dependências
 npm instal
 npm install react-hook-form
 npm install @hookform/resolvers
